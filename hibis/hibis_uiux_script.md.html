@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>hibis_uiux_script</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); background-color: rgb(40, 44, 52); overflow: auto; }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(124, 135, 156); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 139, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(124, 135, 156); border-color: rgb(75, 83, 98); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(75, 83, 98); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(75, 83, 98); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(58, 63, 75); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); border-image: initial; background-color: rgb(58, 63, 75); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: scroll; }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px; }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+.line-number.bracket-matcher {
+  background-color: #777;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+pre.editor-colors .line.cursor-line {
+  background-color: rgba(153, 187, 255, 0.04);
+}
+pre.editor-colors .invisible {
+  color: #abb2bf;
+}
+pre.editor-colors .cursor {
+  border-left: 2px solid #528bff;
+}
+pre.editor-colors .selection .region {
+  background-color: #3e4451;
+}
+pre.editor-colors .bracket-matcher .region {
+  border-bottom: 1px solid #528bff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .find-result .region.region.region,
+pre.editor-colors .current-result .region.region.region {
+  border-radius: 2px;
+  background-color: rgba(82, 139, 255, 0.24);
+  transition: border-color 0.4s;
+}
+pre.editor-colors .find-result .region.region.region {
+  border: 2px solid transparent;
+}
+pre.editor-colors .current-result .region.region.region {
+  border: 2px solid #528bff;
+  transition-duration: .1s;
+}
+pre.editor-colors .gutter .line-number {
+  color: #636d83;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  color: #abb2bf;
+  background-color: #2c313a;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right {
+  color: #abb2bf;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #abb2bf;
+}
+.syntax--comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.syntax--comment .syntax--markup.syntax--link {
+  color: #5c6370;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #98c379;
+}
+.syntax--keyword {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--control {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--operator {
+  color: #abb2bf;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #61afef;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #d19a66;
+}
+.syntax--storage {
+  color: #c678dd;
+}
+.syntax--storage.syntax--type.syntax--annotation,
+.syntax--storage.syntax--type.syntax--primitive {
+  color: #c678dd;
+}
+.syntax--storage.syntax--modifier.syntax--package,
+.syntax--storage.syntax--modifier.syntax--import {
+  color: #abb2bf;
+}
+.syntax--constant {
+  color: #d19a66;
+}
+.syntax--constant.syntax--variable {
+  color: #d19a66;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--numeric {
+  color: #d19a66;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #56b6c2;
+}
+.syntax--variable {
+  color: #e06c75;
+}
+.syntax--variable.syntax--interpolation {
+  color: #be5046;
+}
+.syntax--variable.syntax--parameter {
+  color: #abb2bf;
+}
+.syntax--string {
+  color: #98c379;
+}
+.syntax--string.syntax--regexp {
+  color: #56b6c2;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #e5c07b;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #e06c75;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #5c6370;
+}
+.syntax--punctuation.syntax--definition.syntax--method-parameters,
+.syntax--punctuation.syntax--definition.syntax--function-parameters,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--separator,
+.syntax--punctuation.syntax--definition.syntax--seperator,
+.syntax--punctuation.syntax--definition.syntax--array {
+  color: #abb2bf;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #61afef;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #e5c07b;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #be5046;
+}
+.syntax--punctuation.syntax--section.syntax--method,
+.syntax--punctuation.syntax--section.syntax--class,
+.syntax--punctuation.syntax--section.syntax--inner-class {
+  color: #abb2bf;
+}
+.syntax--support.syntax--class {
+  color: #e5c07b;
+}
+.syntax--support.syntax--type {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #e06c75;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #d19a66;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #61afef;
+}
+.syntax--meta.syntax--class {
+  color: #e5c07b;
+}
+.syntax--meta.syntax--class.syntax--body {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--method-call,
+.syntax--meta.syntax--method {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--definition.syntax--variable {
+  color: #e06c75;
+}
+.syntax--meta.syntax--link {
+  color: #d19a66;
+}
+.syntax--meta.syntax--require {
+  color: #61afef;
+}
+.syntax--meta.syntax--selector {
+  color: #c678dd;
+}
+.syntax--meta.syntax--separator {
+  background-color: #373b41;
+  color: #abb2bf;
+}
+.syntax--meta.syntax--tag {
+  color: #abb2bf;
+}
+.syntax--underline {
+  text-decoration: underline;
+}
+.syntax--none {
+  color: #abb2bf;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #523d14 !important;
+  background-color: #e0c285 !important;
+}
+.syntax--invalid.syntax--illegal {
+  color: white !important;
+  background-color: #e05252 !important;
+}
+.syntax--markup.syntax--bold {
+  color: #d19a66;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #c678dd;
+}
+.syntax--markup.syntax--deleted {
+  color: #e06c75;
+}
+.syntax--markup.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading {
+  color: #e06c75;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #61afef;
+}
+.syntax--markup.syntax--link {
+  color: #56b6c2;
+}
+.syntax--markup.syntax--inserted {
+  color: #98c379;
+}
+.syntax--markup.syntax--quote {
+  color: #d19a66;
+}
+.syntax--markup.syntax--raw {
+  color: #98c379;
+}
+.syntax--source.syntax--c .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cpp .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cs .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--css .syntax--property-name,
+.syntax--source.syntax--css .syntax--property-value {
+  color: #828997;
+}
+.syntax--source.syntax--css .syntax--property-name.syntax--support,
+.syntax--source.syntax--css .syntax--property-value.syntax--support {
+  color: #abb2bf;
+}
+.syntax--source.syntax--elixir .syntax--source.syntax--embedded.syntax--source {
+  color: #abb2bf;
+}
+.syntax--source.syntax--elixir .syntax--constant.syntax--language,
+.syntax--source.syntax--elixir .syntax--constant.syntax--numeric,
+.syntax--source.syntax--elixir .syntax--constant.syntax--definition {
+  color: #61afef;
+}
+.syntax--source.syntax--elixir .syntax--variable.syntax--definition,
+.syntax--source.syntax--elixir .syntax--variable.syntax--anonymous {
+  color: #c678dd;
+}
+.syntax--source.syntax--elixir .syntax--quoted {
+  color: #98c379;
+}
+.syntax--source.syntax--elixir .syntax--keyword.syntax--special-method,
+.syntax--source.syntax--elixir .syntax--embedded.syntax--section,
+.syntax--source.syntax--elixir .syntax--embedded.syntax--source.syntax--empty {
+  color: #e06c75;
+}
+.syntax--source.syntax--elixir .syntax--readwrite.syntax--module .syntax--punctuation {
+  color: #e06c75;
+}
+.syntax--source.syntax--elixir .syntax--regexp.syntax--section,
+.syntax--source.syntax--elixir .syntax--regexp.syntax--string {
+  color: #be5046;
+}
+.syntax--source.syntax--elixir .syntax--separator,
+.syntax--source.syntax--elixir .syntax--keyword.syntax--operator {
+  color: #d19a66;
+}
+.syntax--source.syntax--elixir .syntax--variable.syntax--constant {
+  color: #e5c07b;
+}
+.syntax--source.syntax--elixir .syntax--array,
+.syntax--source.syntax--elixir .syntax--scope,
+.syntax--source.syntax--elixir .syntax--section {
+  color: #828997;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--link .syntax--entity {
+  color: #61afef;
+}
+.syntax--source.syntax--go .syntax--storage.syntax--type.syntax--string {
+  color: #c678dd;
+}
+.syntax--source.syntax--ini .syntax--keyword.syntax--other.syntax--definition.syntax--ini {
+  color: #e06c75;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--modifier.syntax--import {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--type {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--keyword.syntax--operator.syntax--instanceof {
+  color: #c678dd;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair {
+  color: #e06c75;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair > .syntax--punctuation {
+  color: #abb2bf;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator {
+  color: #56b6c2;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--delete,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--in,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--of,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--instanceof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--new,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--typeof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--void {
+  color: #c678dd;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation.syntax--string {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation {
+  color: #98c379;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--constant.syntax--language.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--constant.syntax--language.syntax--json {
+  color: #56b6c2;
+}
+.syntax--source.syntax--ruby .syntax--constant.syntax--other.syntax--symbol > .syntax--punctuation {
+  color: inherit;
+}
+.syntax--source.syntax--python .syntax--keyword.syntax--operator.syntax--logical.syntax--python {
+  color: #c678dd;
+}
+.syntax--source.syntax--python .syntax--variable.syntax--parameter {
+  color: #d19a66;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><h1 id="-ux-">ユーザーテスト入門〜UXデザインの第１歩はユーザーに会うことから</h1>
+<h2 id="-">自己紹介</h2>
+<p>はじめまして、freeeの伊原と申します。（以下自己紹介）</p>
+<p>というわけで、UIデザインのためのユーザー調査ということを、前職含めると約10年ぐらいやってきています。今日はその中で感じた「UXデザインの第一歩としてはユーザーテストが最適である」ということを、ちょっとしたワークショップも交えつつ、お伝えできればと思っています。</p>
+<h2 id="-">ユーザーに会えているか？</h2>
+<p>さて、世間ではUXデザインが大事だ！と言われるようになり、けっこうな年月が経っているように思います。</p>
+<p>ただですね、私ちょっと気になることがあって。UI/UXデザインって表記あるじゃないですか。なんでこれ、単にUIデザインじゃダメなんだろうと。これ、私が思うに、単にUIデザインって書くと普通にUIをデザインしているだけに感じられるので、「ユーザー視点に立って」UIデザインすることをUI/UXデザインと呼んでいる的な。そういうニュアンスなんじゃないかなと思うのです。</p>
+<p>で、そのユーザー視点の獲得なんですが、それを実務でどのくらいやっていける状況があるのだろうか？と。UXというからには、そのUというのはユーザーでして、やっぱり基本的にはそのユーザーに「会っていく」なかでいろいろ潜在的なものを掴んで、それを洞察だったり改善だったりの元にしていこうという話なわけです。しかしながら現実的にはなかなか会うことが難しいという状況がありそうだなと。</p>
+<p>そこでひとつ質問があります。この中で、普段の業務、プロジェクトの中で、エンドユーザーに会ったことがあるというかた、どのくらいいらっしゃいますか？クライアントでなく、エンドユーザー、つまり自分たちが作ったものを使っている人たち、ないしは使うであろう人たちに、ということです。
+…はい、N割という感じですね。ではそのなかで、プロジェクトをすすめる中でそのユーザーにインタビューしたり、観察したりといったことをやったことある方はどのくらいでしょうか？いわゆる正しい型に沿ったかどうかとか、分析手法がどうこうとかはまったく問わないです。話聞いたことあるぞ、見せてもらったことあるぞというぐらいで。</p>
+<p>…なるほど。やはり仕事の中でユーザーに会いながら作るのはなかなか難しいという現状があるようですね。ただこれですね、割とどこに行っても聞く話です。もちろんやっている人はバリバリやってるんでしょうけど、「UXは大事なんだけど会えないので、ユーザーの気持ちに近づけるようログを見たりするとか、社内で意見を出し合う」とか、結局「ユーザーのことを『考える』」つまりどっちかといえば想像でユーザーの気持ちになるということを心がけるというところで止まってしまうという話はよくあります。</p>
+<h2 id="ux-5-">UXデザインを導入しにくい5つの理由</h2>
+<p>ではなぜ、ユーザーが大事と思うのに、こんなにもユーザーに会いにくいのでしょうか。私としては以下あたりが理由のような気がするのです。</p>
+<p>できちゃう問題：ユーザーに会わずともモノは作れる
+わかってる問題：ユーザーのことはもうわかっている
+遠くないか問題：上流の調査がいつ役に立つかが不明
+反映難しい問題：モデルと要件を設計に落としにくい
+お見積もり問題：アドオンの感があるしコスパが不明</p>
+<p>まず【できちゃう問題】です。私たちが扱うWebサイトやWebアプリケーションって、まあそれのせいで人が不幸になったりはしにくいんですよね。そのへんがハードウェアとか建築とは違うところだなあと。サービスが落ちたとかデータが消えたとかハッキングされたとか、そういうのはけっこう問題なので、そのへんの品質面は重要だったりするのですが、利用者の体験とかユーザビリティは、まあかなり厳しかったとしてもモノとしては成立しそうに感じます。機能要件を満たしていれば請求も立てられます。なのでそのあたりはどうしても必須ではなく努力目標的に捉えられがちです。それじゃダメだよねってことでUXと言われているわけですが、関係者がみんなそういう意識であるとは限らないのが現状であると。</p>
+<p>次に【わかってる問題】です。これはちょっと面白いマンガがあるのでご紹介します。ペルソナ手法の教科書という本の冒頭にあるものなんですが。はい、こういう感じで、クライアントは既に課題を理解しているし、外向けならマーケの結果や市場調査の結果、内向きなら業務分析の結果、アクセスログ分析の結果などを持っているので、すでにユーザーについてはアタリがついているんだと、そういう話になりやすいわけです。実際のところ、そういった調査はユーザーの潜在ニーズを知るとか、誰のために作るか決めるとか、UIの判断に使えるようなものではないのですが、まあユーザーについて調べたものではあるので、それらを元に要件定義する流れがあると「もうわかってるんだからこれ以上何か調べ物をする必要はない」となってしまいがちです。実際に、プロジェクト要件定義が終わった案件のRFPに入札して、サイト要件定義としてユーザー調査を始めようとしたら「それは要らない」となって一悶着あった経験もあります。</p>
+<p>3つ目は【遠くないか問題】です。人間中心設計って聞いたことあるかたいらっしゃいますか？…ありがとうございます。UXデザインはいろんなやり方があるのですが、その中でもISO規格にもなっている、いわゆるベースとなるやり方が人間中心設計と呼ばれるものです。図で表すとこんな形です。で、この図のどこから始めても良いよって話になってはいるのですが、とはいえまあアタマからやろうとする場合が多くて、そうすると計画→調査→分析→モデル化→要件抽出となって、そのあとやっと設計になると。これがですね、UXデザイン前提でない場合は、現場から遠い感がすごくするわけですね。そうやって積み上げていくものがいつになったらモノに関わってくるのかが不安になってしまう。</p>
+<p>4つ目は【反映難しい問題】。調べた結果をもとにペルソナとかシナリオとかジャーニーマップとか作ったりするわけですが、そもそもそういったものを作るプロセスも今までやったことない話なうえに、それらをどう使うと設計に反映できるかもよくわからない。「ペルソナ作ってそれからどうするの？」っていうド直球な本が出ているぐらいでして、そういったものを作ってもモノに反映できないで何故かお蔵入りしちゃうっていうケースはすごく良くあるんですね。ユーザー要件から機能要件にしてUIに落とし込むには情報設計やインタラクションデザインというスキルが必要なのですが、そこもちゃんと解説している本や記事が少ないので、途方に暮れがちと。</p>
+<p>5つ目は【お見積もり問題】。いままで挙げたようなリスクをはらんでいるものをですね、はいそうですかとプロジェクトに組み入れて予算取りするというのはなかなか勇気がいるわけです。UXデザインやらなくてもモノはできちゃうし、いままでそれでやってこれたんだから、今回だっていけるだろうという気持ちになるのは良くわかります。しかもプロジェクトは一回きりで、UXデザインした場合としていない場合で対照実験できるわけでもないので、UXデザインのROIを示せと言われてもなかなか難しいものがあります。というかぶっちゃけ、そう言ってくる時点で、その指摘をしている人はUXデザインをやりたくない場合がほとんどですね。</p>
+<h2 id="-">ニワトリ卵問題：会ってみないと大事さがわからない</h2>
+<p>そして最後。これだけは他の問題と性質が違います。これら全体を束ねる根本的な問題と言ってもいいでしょう。【ニワトリ卵問題】。つまり「ユーザーに会ってみたことがあるひとだけが、その大事さに気づく」のであって、逆に言えば「ユーザーに会わないかぎりは、それが心底大事とは思えない」ということです。つまり会ったことがない人に大事さを問いても、会ってないのでそれがわからないのです。そんな人達にUXデザインをやりたいですと言っても、あなたがすでに別の観点でとても信頼を得ていたり成功を重ねていたりしない限りは、やらない理由のほうに引きづられていってしまうのは避けられないでしょう。</p>
+<p>というわけで、いわゆるUXデザインを正攻法で正面突破するのは得策ではないのです。でも、ここに集まって下さった皆さんが「大事だと思う、知っておきたい、やっていきたい」という直観は大事ですし、世間の波もユーザーを見ていくほうから外れることはないでしょう。というわけでどうしたらやっていけるのかを考える必要があるわけです。</p>
+<h2 id="-">私も最初はユーザーテストから</h2>
+<p>で、その最初の一歩はユーザーテストが良いと思っているという話につながるのですが、かく言う私自身が、UXデザインの最初の一歩がユーザーテストだったんですね。あ、ちなみにユーザーテストというのは、簡単に言うとプロトタイプをユーザーに操作してもらって、その様子を観察するというものです。で、たまたま外資系の大手のクライアントで、UIが一通りできあがったあとに最後にユーザーテストを行うことが義務付けられていて、自分たちのデザインがほぼ終わったものを、外部のユーザー調査会社主導でユーザーテストをやってもらったんです。それはコンタクトレンズのプロモーションサイトで、いまはもう懐かしいFlash製でした。</p>
+<p>で、そのときの被験者がまったく自分が予想してなかった使い方をしたんですね。サイトが表示されてからナビゲーションでコンテンツを見に行ってくれると当たり前のように思っていたんですが、その下にある「抽選で5000円プレゼント」のバナーを力いっぱい連打したという。この行動をみて私は非常に衝撃を受けました。どう考えてもスルーするだろうと思って配置したバナーを、コンテンツを見に行く前に連打していたという。なぜそうしたかを聞いてみたら、コンタクトレンズを定価で買う人なんかいなくて、常にキャンペーンなどを渡り歩いて安価に買う方法を探しているということだったんですね。ここで私は「自分とユーザーはまったく違うし、ユーザーの考えを自分の力だけで事前に推定することは不可能だ」という風に考えるようになったわけです。私は眼鏡ユーザーで、コンタクトレンズ界の常識なんてまったく知らなかったのです。いま思えばリサーチが足りないという話も多分にありますが…。</p>
+<p>その次にやった案件が、自動車保険の見積りを行うサイトです。この案件でも私はユーザーの気持ちになることは難しいだろうなと考えていました。私は免許こそあれ、ペーパードライバーだったので、自動車保険を申込んだことがありません。前回と同じ轍を踏まないようにと、この案件では画面設計の段階でプロトタイピングツールを使って実物っぽく動くものをつくり、それを使ってユーザーテストをやったんですね。ほぼ稼働原価だけで、スケジュールも伸びないように自分で調整する前提で強引にねじ込んでもらって。で、このときもやっぱり、自分の期待と大いに外れる行動をユーザーが取ったんですね。迷わないようにと画面右側にけっこうな大きさのヘルプ領域をつくり、そこに見積もりに必要な書類リストなどを入れておいたのですが、そこを全く見ずに空欄のまま先に進もうとするユーザーが何人も。</p>
+<p>ここで私は完全に、晴れてユーザー調査必須派に転向したわけです。当然、その状況を見た関係者も全員驚きをもってその結果を見ていました。以来、私はUXデザインの道に踏み込んでいき、前職の社内でもその領域の人として認知されるようになっていったわけです。</p>
+<h2 id="-">壁を突破するためのユーザーテスト</h2>
+<p>ユーザーテストは、さきほど挙げた諸問題のほとんどを突破できる、ほぼ唯一といって良い手法だと考えています。</p>
+<ul>
+<li>【できちゃう問題：ユーザーに会わずともモノは作れる】と【わかってる問題：ユーザーのことはもうわかっている】は、ユーザーテストをやると、プロジェクト関係者全員の予想を裏切る行動や、マーケ調査やアクセスログレベルではわからない潜在ニーズ、行動の「理由」の出現によって、その思い込みが破壊されます。</li>
+<li>【遠くないか問題：上流の調査がいつ役に立つかが不明】【反映難しい問題：モデルと要件を設計に落としにくい】みたいなこともユーザーテストだと起きません。目に見えるUIをユーザーに使ってもらい、そこで起きた課題を解決するというのは、誰の目にとっても明らかで意義のある活動です。知ってしまったものを直さないわけには行きませんよね。</li>
+<li>そしてやはり、最大の効果は【ニワトリ卵問題：会ってみないと大事さがわからない】について、認識がひっくり返せる点でしょう。そもそもサービスやシステムは誰かが上手くやっていけるように作っているわけで、やはり誰かのために良いものを作りたいと考えるわけですから、「この人が使えるようにしよう」という、人の形が目に見えるというのは非常に重要な観点だと言えます。</li>
+</ul>
+<h2 id="-">ユーザーテスト、やってみよう！</h2>
+<p>さて、そんなユーザーテストですが、このプロセスの最大の特徴は「体験」にあります。ユーザーが自分の予想と違う使い方をする場面を目の当たりにする体験。これが何者にも代えがたいインパクトでして、ユーザーに直接会う必要があるねという風になる源泉なわけです。</p>
+<p>ということで、今日は短い時間ながらも簡単な「ユーザーテスト体験ワークショップ」をご用意しています。このワークショップでは、席の隣同士で、モデレーターとテスターに分かれて、ユーザーテストの様子を疑似体験します。</p>
+<p>テストする対象のサイトはこちら、ドミノ・ピザのスマホサイトです。我が家では夕食の準備が面倒になったときに良く注文されており、昨夜もイチユーザーとしてちゃんと注文しました。が、このサイトけっこう迷いやすいUIだなーと感じることがよくあるため、今回はこのサイトのユーザビリティをテストしてみたいと思います。あ、でもこの場にピザが大量に届くと大変なことになるので、注文手前で止めます、ご安心ください。</p>
+<p>それではまず、隣の席の人とじゃんけんをしてください。勝った人がモデレーター、負けた人がテスターです。ふたりともテーブルにある台本を手にしてください。そして、ふたりともスマホを取り出してブラウザを起動し、Googleで「ドミノ・ピザ」と検索し、ドミノ・ピザのトップページを表示しておいてください。また、モデレーターになった人には別途タスクシートという紙をお配りしますので、手を挙げてください。この紙はテスターには見せないでください。ペンを取り出してメモできるようにします。ペンがない方は教えてください。</p>
+<p>よろしいでしょうか。ユーザーテストにおいて大事なのはまずはラポール、つまり相互に信頼できる関係性です。お互いカチカチだと上手くやれないので、まず2分間で、今日参加した理由を含めて自己紹介してください。</p>
+<ol>
+<li>それでは次は2人揃って台本の「はじめに」を読んでいきましょう。本来はモデレーターだけが読むものですが、この場ではテスターもいっしょに読んでいって大丈夫です。</li>
+<li>その場の目的を話します。何のサイトの何のためのテストか、どういったことをやってほしいのか、時間はどのくらいかかるのか、というあたりです。「今回はドミノ・ピザのサイトにおいて、注文に至るまでの流れを追いたい、時間は10分を想定しています」ということになります。</li>
+<li>「間違ったら設計のほうが悪いのです」と言っておきましょう。ユーザーは間違えると自分が悪いのではと考えがちですし、間違わないように慎重に操作しがちです。なので、間違っている場合はサイトのほうが悪いということで、あまり気にせずにいつも通り使ってください、ということを伝えるわけです。</li>
+<li>思考発話、何をいま考えているのか喋って欲しいとを促します。だまって使っているとその行動の理由がモデレーターはわからないからです。とはいえ、いきなり出来る人は少ないので、たとえばいまだったら「ヤフーで仮想通貨に関するニュースの記事ページを一つ表示してください、何をどう探しているか声に出しつつ」とかで練習してもらうとよいでしょう。今回はそこはスキップします。</li>
+<li>「一人で使っているときの状況を観察させてほしいので、モデレーターに解決策を問われてもすぐに答えられないかも」と伝えましょう。現実には助け舟になる人はおらず、一人の力で解決していく必要があるので、モデレーターは質問には答えてはいけないわけです。質問されたら「そうですね〜逆にどう思いますか？」と聞き返しましょう。</li>
+<li>テストの内容次第ですが、ここではあくまでサイト上で課題を解決してほしいので、Google検索を封印してもらいます。</li>
+<li>そして、ユーザーの属性を訪ねます。今回はドミノ・ピザなので、宅配ピザをどのくらい頼むか、どんな状況で頼むか、好きなピザのタイプはどんなものか、どんな方法・デバイスで注文するか、を2分間で確認してください。</li>
+</ol>
+<p>その他、今回はスキップしますが、状況に応じて以下のようなことも伝えます。</p>
+<ul>
+<li>休憩や途中退出OKです</li>
+<li>隣の部屋でスタッフが拝見していますが、気にしないで</li>
+<li>録画/録音していますが、プロジェクトのためだけに使います</li>
+<li>問題なければここに署名してください</li>
+</ul>
+<p>さて、いよいよテスト開始ですが、その前に準備が必要です。モデレーターはタスクシートを見てください。テスターに実行してもらうタスクと、最短ルートでのフローが載っていますので、まずそれを読んで、自分のスマートフォンを使って3分間でそのルートを辿ってください。辿り終わったらサイト内の他のところも自由に見て回ってください。</p>
+<p>テスターの方はドキドキしながら、台本を眺めつつお待ちください。いまのうちに、このセミナー全体に対する質問などをまとめておいてもいいかもしれません。くれぐれも、ドミノ・ピザのサイトを見て回っての予習はしないようにしてください。</p>
+<p>終わりましたか？それではテストスタートです。今回はスマートフォンなので、テスターは自分のスマートフォンを、モデレーターが状況を見ることができるように机の上に置き、そのうえから人差し指でタップするようにして操作してください。今回は機材の都合ということでご容赦を。</p>
+<p>まずモデレーターは、第1の質問を投げかけてください。</p>
+<blockquote>
+<p>「あなたはいま、夕食時にピザが食べたいと思いつき、スマホを手にしてGoogle検索で「ドミノ・ピザ」と検索しました。いま見えているものは何でしょうか。そして、あなたは自分の家に希望のピザを届けてもらおうとしたとき、まずどこから見て、どのボタンを押すでしょうか？」</p>
+</blockquote>
+<p>テスターはその質問に答えてください。もしタップしてページを移動したら、トップページに戻ってください。</p>
+<p>よろしいでしょうか。それでは第2のタスクを伝えてください。</p>
+<blockquote>
+<p>「ピザを届けてもらうために、いまの場所に届けるよう注文できるかを確認してください。住所が必要な場合は『〒730-0022 広島県広島市中区銀山町３−１ ひろしまハイビル２１』を使ってください。」</p>
+</blockquote>
+<p>なお「お支払に進む」「確認画面へ進む」「注文を確定する」は絶対押さないようにお願いします。ピザが届いてしまいます笑</p>
+<ul>
+<li>モデレーターは思考発話を促しつつ、基本は観察に徹します。ユーザーと画面から目を離さず、想定と違っている点などを紙にメモっていってください。</li>
+<li>とはいえ、ずっと迷っていたら声を掛けて、迷っている理由を聞いてください。</li>
+<li>道から大きくハズレて戻ってこなかったらトップページに戻してください。</li>
+<li>モデレーターは「では、開始してください」とテスターに明示的にタスクを開始してもらってください。</li>
+</ul>
+<p>タスクが完了したら、モデレータはテスターに対し、上手く行って無さそうだと感じたところについての補足を1点のみ聞いてください。そしてトップページに戻ってください。</p>
+<p>それでは最後の第3のタスクを伝えてください。</p>
+<blockquote>
+<p>「以下のピザをカートに入れてください。炭火焼きチキテリと炭火焼きビーフのハーフ＆ハーフ、ビーフ側にはトッピングにマヨネーズ、Lサイズ、生地はウルトラクリスピークラスト」</p>
+</blockquote>
+<p>ここでも、「お支払に進む」「確認画面へ進む」「注文を確定する」は絶対押さないようにお願いします。私の個人的な趣味のピザが届いてしまいます笑</p>
+<ul>
+<li>モデレーターは思考発話を促しつつ、基本は観察に徹します。ユーザーと画面から目を離さず、想定と違っている点などを紙にメモっていってください。</li>
+<li>とはいえ、ずっと迷っていたら声を掛けて、迷っている理由を聞いてください。</li>
+<li>道から大きくハズレて戻ってこなかったらトップページに戻してください。</li>
+<li>モデレーターは「では、開始してください」とテスターに明示的にタスクを開始してもらってください。</li>
+</ul>
+<p>タスクが完了したら、モデレータはテスターに対し、上手く行って無さそうだと感じたところについての補足を1点のみ聞いてください。そしてトップページに戻ってください。</p>
+<p>これでテスト終了です！モデレーターはテスターに協力のお礼を言いましょう。みなさまお疲れ様でした。</p>
+<hr>
+<p>（リハしてみたらこのへんで45分でした。ので、ほとんどがワークになりそうです）</p>
+<p>（以下省略）</p>
+<hr>
+<h2 id="-">明日からできるユーザーテスト</h2>
+<p>【お見積もり問題：アドオンの感があるしコスパが不明】についても、かなりのところまで歩み寄ることができます。できるだけ追加工数がかからないようなやり方をご紹介していきますので、そちらを参考にして頂ければと思います。</p>
+<p>というわけで、明日からできるユーザーテストという感じで、なるべく費用対効果の高い、ラフだけど有意義なテストのやり方について、私なりの考えをお伝えしていきます。</p>
+<p>まず、ユーザーテストとは何なのかの前提をお伝えしておきます。ユーザーテストというのは、先程も申し上げましたが、プロトタイプをユーザーに操作してもらって、その様子を観察するというものです。そして確認すべきことはユーザビリティ、すなわち使いものになる「度合い」であるということです。なので、より詳しく言うと「ある製品を使うときの、有効・効率・満足度がどうなるか」と「それを阻害する要因はどんなものがあるか」を知るというのがユーザーテストであると。テストなので検証であって、検証目的でやるということを知っておいてください。まだふわっとしている状態における、潜在ニーズを探るためのインタビューと混同しないように注意が必要です。そういうのが見えちゃうケースもありますが、それが主目的ではないと。</p>
+<p>で、やるタイミングとしては早ければ早いほうがいいです。これは単純な話で、最後の最後でテストしていろいろわかっても直せないからです。できれば画面設計が多少進んだぐらいの段階からスタートすべきでしょう。そして、できれば複数回やるべきです。これも割とシンプルな話で、2回以上やらないと改善結果が妥当かどうかわからないからです。2回目に新たに出てくる問題とかもあって、そう考えると回数はもっと多いほうがいいのですが、とりあえず2回以上がマストです。</p>
+<h2 id="-">簡易的なユーザーテストのプロセス</h2>
+<p>そのうえで、ユーザーテスト1回あたりをプロセスにしてみると、こんな感じです。</p>
+<ul>
+<li>どこを何の観点で見るのか決める</li>
+<li>シナリオとタスクを書き目標を決める</li>
+<li>プロトタイプを作る</li>
+<li>誰に来てもらうのか決める</li>
+<li>時間と場所とスタッフを用意する</li>
+<li>台本テンプレートを埋める</li>
+<li>プレテストのあと、本番テストを実施する</li>
+<li>まとめる、フィードバックする</li>
+</ul>
+<p>たぶんこれ以上は省略できないと思います。というわけで順を追って説明していきます。</p>
+<h2 id="-">どこを何の観点で見るのか決める</h2>
+<p>最初は「どこを何の観点で見るのか決める」という部分です。UI設計のなかで、どこにユーザビリティ上の懸念があるか、という点を考えます。たいてい、複雑な部分とか、一連の流れがある部分とか、使えないと致命的な部分とか、新しい取り組みをしている部分とかが対象になります。ただしあまり欲張らずに、ここは見ておいたほうがいいだろうという箇所を絞ったほうがよいでしょう。あとでプロトタイプを作るのが大変になるからです。見る観点としてはざっくり「わかるか」「できるか」というものがあります。認知と理解ができるか、それを元に想定の行動ができるか、あるいはやり直しができるか。そういったものをあらかじめ考える必要があります。</p>
+<h2 id="-">シナリオとタスクを書き、目標を決める</h2>
+<p>次に「シナリオとタスクを書き、目標を決める」という段階です。ユーザーは漠然とサイトやアプリを使うわけではなく、なんらかやりたいことがあってそこに訪れているはずです。なので「こういう前提で見に来ている」という設定が必要です。そして、その前提において、何をどうするというタスクがあるのか、どうするとゴールなのかを決める必要があります。つまり必ずスタートとゴールを明示するということです。要件定義時にユースケースがあれば、それを流用するとよいでしょう。タスクは「ボタンを押してください」などではなく「◯◯という商品を探して購入してください」といった粒度になります。</p>
+<h2 id="-">理想の流れを考えておく</h2>
+<p>そのうえで、有効・効率・満足度の度合い、すなわち目標も考えておきます。これは、「理想的にタスクが完了するまでの流れを先に考えておく」ということです。そうすれば、それがどう完了するか、どのくらいの時間で出来るか、不満なくできそうか、というアタリをつけることができます。逆に言えば、それがない、つまり目標がないと良かったのかどうかわからないですよね。適当に触ってみてくださいという感じだと、ユーザビリティは測れないのです。</p>
+<h2 id="-">プロトタイプを作る</h2>
+<p>そして「プロトタイプを作る」に進みます。ただここは、ユーザーテスト専用にプロトタイプを作るというよりは、ありものをプロトタイプに「変換する」といったほうが良いかもしれません。具体的には画面設計書を流用してパワポ紙芝居またエクセル紙芝居を作るという方法をとります。パワーポイントやエクセルやGoogleスライドなどは任意のスライドやシートにリンクができるので、インタラクティブ紙芝居をつくることができます。実はその手の本も2冊ほど出ています。もちろんProttとかAdobe XDとかそういったものを使うのでも構いませんし、慣れてくるとそのほうが効率はいいと思います。ただ、最初に始めるときは、新しいツールの学習コスト自体もネックになってくるので、そういう意味ではなるべく流用できるものを使ってハードルを下げるのが良いかなという個人的な感覚です。</p>
+<h2 id="-">紙のほうが簡単？</h2>
+<p>ペーパープロトタイピングも、もちろん慣れてくれば手早くできますし、先に紙にスケッチする派の人はすんなり移行できると思います。ただ、普段office系のソフトで画面設計している人が最初の一歩目として紙から始めるのは逆に面倒に感じるかもしれません。また、紙の場合は画面の入れ替えや状態の変化などを人間がその場でオペレーションする「オズの魔法使い」と呼ばれる方法を取る必要があり、これが意外に難易度が高い（ふるまいを全て記憶しなれければならない）ので、ユーザーテストの威力を感じたあとにトライしても遅くはないのかなと思います。ちなみにこちらも書籍が2冊ほど出ています。</p>
+<h2 id="-">誰に来てもらうのか決める</h2>
+<p>さて、モノが出来てきたら「誰に来てもらうのか決める」必要がありますね。もちろん実際のエンドユーザーに来てもらえれば最高ですが、そのようにしようとするとリクルーティングや謝礼について考えねばならず、けっこう大変です。では、そうでなかったらやる意味はないのか？というと、ぜんぜんそんなことはありません。まずは「作り手の思い込みが覆される」「課題の片鱗が見つかる」ということが大事なので、プロジェクトに関わっていない社員に頼むというところから始めましょう。内容を知っている人は避けつつ、なるべく想定ユーザーに近いとベターです。この場合の「近い」というのは、年齢や性別などが近いということではなく、想定するユーザーの状況に近い人を選ぶべきです。先程の自動車保険の例でいえば、年齢や性別が近いが車を持っていない人よりも、車を持っている人を選ぶべき、ということです。</p>
+<h2 id="-">何人呼べばいいのだろう？</h2>
+<p>人数としては、1回あたり3人は欲しいところです。経験上、この人数を下回ると課題の網羅性が極端に落ちます。だいたいこのあたり調べると5人で3回と出てくるのですが、社員がそんなに居るのかという話になってきてしまいます。同じ人でテストすると学習されてしまいますから重複はできません。なので、社員でやって「ユーザーテスト大事」という感覚が得られる程度に有意という意味だと、3人2回、すなわち6人が防衛ラインかなという感覚です。あ、とはいえもちろんそれを下回ってもやらないよりはやったほうがいいです。1以上とゼロの差は天と地ほどあります。
+ちなみにカフェや道端で想定ユーザーに近い人に話しかけてゲリラテストするというやり方もありますが、実質事業側だけしかできないでしょう。受託案件だと非現実的です。私は未経験ですが、freeeに転職したのでやってみようかと目論んでいますw</p>
+<h2 id="-">時間と場所とスタッフを用意する</h2>
+<p>あとは「時間と場所とスタッフを用意する」です。これもできるだけ低コストにやるとなると、いきおい会社の会議室でやることになります。とはいえ、PCサイトであれば、PCと外部モニタさえあれば何とかなります。別の部屋でモニタできるようにするのも必須ではありません。ただ、社内の人を巻き込みたいのであれば、なるべく多くの関係者に観てもらえるよう努めたいところではあります。Googleハングアウトで画面共有すれば、比較的かんたんに他の人にも見てもらえます。スマホの場合は手元を覗き込めないのでちょっと一工夫が必要です。具体的には、アームで吊るしたスマホでスマホを持った手元を映し、それを外部モニタに出力する必要があります。スマホの画面を直接外部モニタに出すと何をどの指でタップしたかわからないからです。
+最低遂行人数は被験者、進行役、メモ係の3人です。つまりスタッフは2人。進行しながらメモを取るのは不可能なためです。なので外部モニタが必要になってくるわけです。
+ちなみにリモートテストというやり方もあり、サービスも複数あります。ただ、雰囲気をつかめないままリモートから始めるのはオススメできません。まずは自分でテストを回してみた後でトライすべきだと思います。</p>
+<h2 id="-">プレテストのあと、本番テストを実施する</h2>
+<p>「プレテストのあと、本番テストを実施する」ということで、ここで重要なのは練習をしましょうということです。一度通しでやってみると、いろいろと漏れ抜けがでてくることがわかります。また、いきなり本番にすると、モデレータが緊張します。ユーザーテストでは被験者がいつもの状態ではないわけで緊張しやすいわけですが、そこでモデレータが固いと、相手も固まってしまいます。社内での練習なわけですから、勉強会と称して聞く側と聞かれる側を交代しながらリハをやってみるのがおすすめです。</p>
+<h2 id="-">気をつけるべきこと</h2>
+<p>本番で気をつけるべきことは、練習のときとおなじで、固くならないことです。お菓子とお茶を置いておき勧める、本題に入る前に世間話するなど、リラックスできるように努めましょう。テスト開始後については、以下あたりを気をつけておくとよいです。</p>
+<ul>
+<li>スタート地点で、いま見えてるものが何であるか、何をするべきものに見えるかを訪ねます。</li>
+<li>タスクを伝え、実行に移ってもらいます。「今は何を考えてるんですか？」と思考発話を再度促すことを忘れずに。</li>
+<li>タスクを依頼したら、明示的に開始を言う。いつ始めていいか戸惑うことが多い。</li>
+<li>基本は「見る！」ことに集中する。ユーザーと画面から目を離さず、操作をきちんとメモ係がメモする。</li>
+<li>こちらから内容に関する質問をしない、誘導しない、答えを聞かれてもオウム返しして、答えないように。</li>
+<li>とはいえ、ずっと迷っていたら声を掛ける、道から大きくハズレて戻ってこなかったら元に戻します。</li>
+<li>タスクごとに振り返りも挟んでいきます（あとだと記憶が変わってしまうからです）。</li>
+<li>すべてのタスクが終わったら、全体を通しての振り返りを行い、またモデレータに対して逆に質問がないかを確認します。</li>
+<li>全ておわったら、ちゃんとお礼を言って退出してもらう。</li>
+<li>テスト画面を最初の状態に戻しておきましょう。これ意外に忘れがちです。</li>
+</ul>
+<h2 id="-">まとめる、フィードバックする</h2>
+<p>「まとめる、フィードバックする」においては、もともとの目的・目標、想定していた最適ルートに対してどうだったかという形でまとめるとわかりやすくなります。ただし関係者がテストを見ていたのであれば、そんなにキレイにまとめる必要はありません。まずはどのような課題があったのかを合意し、それに対する優先度と、改善案が話し合える状態になることが大事です。</p>
+<hr>
+<p>（ここまで省略）</p>
+<hr>
+<h2 id="-">書籍のご紹介</h2>
+<ul>
+<li>今日は細かい話をいろいろ端折っています。興味が出たらぜひ入門書を見てみてください。ユーザーテストからUXデザインをはじめるための本、3冊あります。<ul>
+<li>アジャイル・ユーザビリティ</li>
+<li>超明快 Webユーザビリティ</li>
+<li>UXデザインをはじめる本</li>
+</ul>
+</li>
+</ul>
+<h2 id="-">結び</h2>
+<p>ユーザーに会うことの大事さがいまいちわかっていない人の目を覚まさせる必要があるわけですが、こういうのは基本一発勝負で「別にやらなくていいじゃん」と思われたらそこから巻き返すのは非常に大変です。ただ、その壁を一番乗り越えやすい手法がユーザーテストだと私は確信しています。誰の目にもプロセスが明確で、明らかに「ユーザーが見えてなかった」「予想と違った」という体験によってそこをひっくり返せるはずです。 UXデザインの第一歩は、「ユーザーは自分とは違う！」という、その実感から始まります。まずはご自身から、そして社内を巻き込み、UXデザインの重要性の認識を得た上で、社外の関係者にプレゼンしていく…という流れになるでしょう。ぜひトライしてみてください。</p>
+<h2 id="-">質疑応答</h2>
+<p>いかがでしたか？わからなかった点など、お気軽にご質問ください。</p></body>
+</html>
